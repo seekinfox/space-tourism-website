@@ -16,7 +16,6 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -55,8 +54,24 @@ Users should be able to:
  -->
 
 ### What I learned
+backdrop_filter is not supported by Firefox so I had to find how to use fallback in case some browser doesn't support it. I found this piece of code when I was looking for a solution 
+```scss
 
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .blurred-container {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
 
+/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .blurred-container {
+    background-color: rgba(255, 255, 255, .8);
+  }
+}
+
+```
 
 ### Continued development
 
