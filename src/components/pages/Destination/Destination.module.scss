@@ -8,7 +8,6 @@
    background-size: cover;
 }
 .dsn__container {
-   height: 100vh;
    background: url(../../../assets/destination/background-destination-mobile.jpg);
    @include background;
    color: v.$white;
@@ -16,6 +15,9 @@
    @include m.flex_column;
    @include m.flex_center;
    padding: 0 2.4rem;
+   padding-top: 8.8rem;
+   padding-bottom: 11.2rem;
+   min-height: 100vh;
    * {
       font-weight: 400;
    }
@@ -43,11 +45,13 @@
 
    @include m.tablet {
       background: url(../../../assets/destination/background-destination-tablet.jpg);
+      @include background();
       
    }
    @include m.desktop {
       padding-top: 10%;
       background: url(../../../assets//destination/background-destination-desktop.jpg);
+      @include background;
       
    }
 }

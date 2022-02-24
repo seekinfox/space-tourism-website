@@ -13,6 +13,21 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  user-select: none;
+  scrollbar-color: black gray;
+  scrollbar-width: thin;
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 0px;
+    border: none;
+  }
 }
 
 html {

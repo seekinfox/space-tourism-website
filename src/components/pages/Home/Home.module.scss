@@ -7,13 +7,13 @@
    background-size: cover;
 }
 .home__container {
-   height: 100vh;
    background: url(../../../assets/home/background-home-mobile.jpg);
    @include background;
    @include m.flex_column;
    @include m.flex_center;
    padding: 0 3rem;
-
+   padding-bottom: 13.1rem;
+   min-height: 100vh;
    @include m.tablet {
       background: url(../../../assets/home/background-home-tablet.jpg);
       @include background;
