@@ -1,0 +1,176 @@
+@use "../../../stylesheets/abstracts/mixins" as m;
+@use "../../../stylesheets/abstracts/variables" as v;
+
+
+@mixin background {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.dsn__container {
+   height: 100vh;
+   background: url(../../../assets/destination/background-destination-mobile.jpg);
+   @include background;
+   color: v.$white;
+   text-align: center;
+   @include m.flex_column;
+   @include m.flex_center;
+   padding: 0 2.4rem;
+   * {
+      font-weight: 400;
+   }
+
+   h2 {
+      font-family: v.$Bl-con;
+      font-size: v.$subheading3;
+      text-transform: uppercase;
+      letter-spacing: v.$space;
+      margin-bottom: 3.2rem;
+      > span {
+         margin-right: 1.8rem;
+         opacity: .6;
+      }
+      @include m.desktop {
+         align-self: flex-start;
+         margin-left: 16.5rem;
+         font-size: v.$Heading5;
+         line-height: 3.4rem;
+         letter-spacing: v.$big_space;
+         margin-bottom: 6.4rem;
+      }
+   }  
+
+
+   @include m.tablet {
+      background: url(../../../assets/destination/background-destination-tablet.jpg);
+      
+   }
+   @include m.desktop {
+      padding-top: 10%;
+      background: url(../../../assets//destination/background-destination-desktop.jpg);
+      
+   }
+}
+
+.dsn__inner_container {
+   @include m.desktop {
+      @include m.flex_row;
+      @include m.flex_center;
+   }
+}
+.dsn__planet_image {
+   margin-bottom: 2.6rem;
+   > img {
+      width: 17rem;
+      height: 17rem;
+      @include m.desktop {
+         width: 44.5rem;
+         height: 44.5rem;
+      }
+   }
+   @include m.desktop {
+      margin-right: 15.7rem;
+   }
+}
+.dsn__information {
+   @include m.flex_column;
+   @include m.flex_center;
+   @include m.desktop {
+      width: 44.5rem;
+      min-height: 47.2rem;
+   }
+}
+
+.dsn__planet_menu {
+   @include m.flex_row;
+   width: 23.75rem;
+   justify-content: space-between;
+   font-family: v.$Bl-con;
+   margin-bottom: 2rem;
+   > p {
+      letter-spacing: v.$space;
+      color: v.$very_light_blue;
+      padding-bottom: .8rem;
+      text-transform: uppercase;
+      font-size: v.$subheading2;
+      @include m.desktop {
+         padding-bottom: 1.2rem;
+         font-size: v.$NavText;
+      }
+      &:hover {
+         border-bottom: 3px solid v.$very_light_blue;
+      }
+   }
+   .dsn__active_link {
+      border-bottom: 3px solid v.$white;
+   }
+
+   @include m.desktop {
+      align-self: flex-start;
+      margin-bottom: auto;
+   }
+}
+.dsn__content{
+   margin-bottom: 3.2rem;
+   > h3 {
+      text-transform: uppercase;
+      font-size: v.$Heading3;
+      line-height: 6.4rem;
+      @include m.desktop {
+         text-align: left;
+         font-size: v.$Heading2;
+         line-height: 11.5rem;
+      }
+   }
+   > p {
+      line-height: 2.5rem;
+      color: v.$very_light_blue;
+      font-size: v.$regularText1;
+      padding-bottom: 3.2rem;
+      border-bottom: 1px solid v.$gray;
+      @include m.desktop {
+         text-align: left;
+         padding-bottom: 5.4rem;
+         line-height: 3.2rem;
+         font-size: v.$regularText;
+      }
+   }
+}
+.dsn__number_info {
+   > div {
+      @include m.flex_column;
+      text-transform: uppercase;
+      > span {
+         &:first-child {
+            color: v.$very_light_blue;
+            font-size: v.$subheading2;
+            letter-spacing: v.$space;
+            margin-bottom: 1.2rem;
+         }
+         &:last-child {
+            line-height: 3.2rem;
+            font-size: v.$subheading1;
+            @include m.desktop {
+               font-size: v.$Heading5;
+            }
+         }
+      }
+      &:first-child {
+         margin-bottom: 3.2rem;
+         @include m.desktop {
+            margin: 0;
+            margin-right: 7.9rem;
+         }
+
+      }
+      @include m.desktop {
+
+      }
+   }
+   @include m.desktop {
+      text-align: left;
+      width: 100%;
+      @include m.flex_row;
+      align-items: flex-start;
+   }
+}
