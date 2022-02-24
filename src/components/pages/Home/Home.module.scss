@@ -10,9 +10,83 @@
    height: 100vh;
    background: url(../../../assets/home/background-home-mobile.jpg);
    @include background;
+   @include m.flex_column;
+   @include m.flex_center;
+   padding: 0 3rem;
 
    @include m.tablet {
       background: url(../../../assets/home/background-home-tablet.jpg);
       @include background;
+   }
+   @include m.desktop {
+      @include m.flex_row;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 30rem;
+      background: url(../../../assets/home/background-home-desktop.jpg);
+      @include background;
+   }
+}
+.home__text_content {
+   color: v.$white;
+   text-align: center;
+   line-height: 25px;
+   > * {
+      font-weight: 400;
+      padding: 0;
+      margin: 0;
+   }
+   > span {
+      font-family: v.$Bl-con;
+      font-size: v.$subheading3;
+      color: v.$very_light_blue;
+   }
+   > h1 {
+      line-height: 10rem;
+      font-size: 8rem;
+      margin: 1.6rem 0;
+   }
+   > p {
+      font-family: v.$Bl-con;
+      font-style: normal;
+      font-size: v.$regularText1;
+      color: v.$very_light_blue;
+   }
+   @include m.desktop {
+      width: 45rem;
+      text-align: left;
+      line-height: 3.2rem;
+      > span {
+         font-size: 2.8rem;
+      }
+      h1 {
+            line-height: 17.2rem;
+            font-size: 15rem;
+            margin: 2.4rem 0;
+      }
+      p {
+         font-size: v.$regularText;
+      }
+   }
+}
+
+
+.home__explore_button {
+   cursor: pointer;
+   width: 15rem;
+   height: 15rem;
+   @include m.flex_row;
+   @include m.flex_center;
+   margin-top: 8.1rem;
+   border-radius: 50%;
+   background-color: v.$white;
+   text-transform: uppercase;
+   > span {
+      font-size: 2rem;
+   }
+   @include m.desktop {
+      width: 27.4rem;
+      height: 27.4rem;
+
    }
 }

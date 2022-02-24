@@ -5,7 +5,7 @@ import Links from './Links';
 import logo from "../../../assets/shared/logo.svg"
 import close from "../../../assets/shared/icon-close.svg"
 
-export default function Navbar({tablet, desktop}) {
+export default function Navbar({desktop}) {
    const [menu, setMenu] = useState(false)
    const navIcon = menu ? close : OIcon;
   return (

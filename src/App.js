@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout/Layout";
 import Crew from "./components/pages/Crew/Crew";
 import Destination from "./components/pages/Destination/Destination";
@@ -13,7 +13,7 @@ function App() {
   const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1123 })
   return (
     <>
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout tablet={isTablet} desktop={isDesktop} />}>
           <Route index element={<Home desktop={isDesktop} />} />
@@ -22,7 +22,7 @@ function App() {
           <Route path="technology" element={<Technology />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
     </>
   );
 }
