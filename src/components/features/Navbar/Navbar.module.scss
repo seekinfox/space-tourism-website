@@ -53,8 +53,8 @@
    color: v.$white; 
    font-size: v.$NavText;
    letter-spacing: .3rem;
-   border: 1px solid red;
 }
+
 
 .nav__mobile_inner_container {
    @include navbarContent;
@@ -66,7 +66,7 @@
    z-index:0;
    padding: 11.8rem 3.2rem;
    @include m.flex_column;
-    
+
    .nav__link {
       margin-bottom: 4rem;
        > p {
@@ -76,6 +76,7 @@
        }
    }
 }
+
 .nav__desktop_inner_container {
    @include navbarContent();
    padding: 0;
@@ -89,3 +90,17 @@
       margin: 0;
    }
 }
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+   .nav__desktop_inner_container, .nav__mobile_inner_container {
+     -webkit-backdrop-filter: blur(85.5px);
+     backdrop-filter: blur(85.5px);
+   }
+ }
+ 
+ /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+ @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+   .nav__desktop_inner_container, .nav__mobile_inner_container {
+     background-color: rgba(0, 0, 0, .9);
+   }
+ }
