@@ -1,0 +1,31 @@
+@use "variables" as v;
+
+@mixin flex_row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex_column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex_center {
+  justify-content: center;
+  align-items: center;
+}
+
+
+//MEDIA QUERIES
+
+@mixin desktop {
+  @media (min-width: #{v.$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{v.$tablet}) and (max-width: #{v.$desktop - 1px}) {
+    @content;
+  }
+}

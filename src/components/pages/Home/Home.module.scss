@@ -1,0 +1,18 @@
+@use "../../../stylesheets/abstracts/mixins" as m ;
+@use "../../../stylesheets/abstracts/variables" as v ;
+
+@mixin background {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.home__container {
+   height: 100vh;
+   background: url(../../../assets/home/background-home-mobile.jpg);
+   @include background;
+
+   @include m.tablet {
+      background: url(../../../assets/home/background-home-tablet.jpg);
+      @include background;
+   }
+}
