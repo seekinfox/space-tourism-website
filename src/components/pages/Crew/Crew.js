@@ -5,7 +5,7 @@ import { CrewData } from './Data'
 
 export default function Crew() {
   const [crew, setCrew] = useState(CrewData[0])
-  
+  const [button, setButton] = useState("Commander");
 
   return (
     <section className={style.crew__container}>
@@ -17,8 +17,10 @@ export default function Crew() {
         <div className={style.crew__content}>
           <div className={style.crew__buttons}>
             { CrewData.map( i => 
-            // console.log(index)
-              <span key={i.id} onClick={() => setCrew(i)}>
+              <span 
+              className={button === i.name ? style.crew__active:""}
+              key={i.id}
+              onClick={() => {setCrew(i); setButton(i.name)}}>
               </span>
             )}
           </div>
