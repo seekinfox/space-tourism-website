@@ -1,0 +1,153 @@
+@use "../../../stylesheets/abstracts/mixins" as m;
+@use "../../../stylesheets/abstracts/variables" as v;
+
+@mixin background {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.crew__container {
+   height: 100%;
+   min-height: 100vh;
+   background: url(../../../assets/crew/background-crew-mobile.jpg);
+   @include background();
+   color: v.$white;
+   text-align: center;
+   @include m.flex_column;
+   @include m.flex_center;
+   padding: 0 2.4rem;
+
+   @include m.desktop {
+      text-align: left;
+      padding: 0 16rem;
+      padding-top: 10%;
+      background: url(../../../assets/crew/background-crew-desktop.jpg);
+      @include background();
+   }
+   @include m.tablet {
+      background: url(../../../assets/crew/background-crew-tablet.jpg);
+      @include background();
+   }
+   * {
+      font-weight: 400;
+   }  
+
+   h2 {
+      font-family: v.$Bl-con;
+      font-size: v.$subheading3;
+      text-transform: uppercase;
+      letter-spacing: v.$space;
+      margin-bottom: 3.2rem;
+      > span {
+         margin-right: 1.8rem;
+         opacity: .6;
+      }
+      @include m.desktop {
+         margin: 0;
+         align-self: flex-start;
+         margin-left: 0;
+         font-size: v.$Heading5;
+         line-height: 3.4rem;
+         letter-spacing: v.$big_space;
+      }
+   }  
+}
+
+.crew__inner_container {
+   @include m.desktop {
+      display: flex;
+      flex-direction:row-reverse;
+   }
+
+}
+
+.crew__image {
+   border-bottom: 1px solid v.$dark-gray;
+   min-width: 32.7rem;
+   width: 100%;
+   margin: 3.2rem 0;
+   @include m.flex_row;
+   @include m.flex_center;
+   > img {
+      width: 50%;
+      min-width: 17.7rem;
+      margin-bottom: auto;
+   }
+   @include m.desktop {
+      margin: 0;
+      border: none;
+      > img {
+         width: 100%;
+         min-width: 56rem;
+         min-height: 68.1rem
+      }
+   }
+}
+
+.crew__content{
+   @include m.flex_column;
+   @include m.flex_center;
+   @include m.desktop {
+      align-items: flex-start;
+   }
+   > span {
+      font-size: v.$subheading3;
+      text-transform: uppercase;
+      line-height: 1.8rem;
+      opacity: .5;
+      margin-bottom: .8rem;
+      @include m.desktop {
+         font-size: v.$Heading4;
+         line-height: 3.7rem;
+      }
+   }
+   > h3 {
+      font-size: v.$subheading1;
+      text-transform: uppercase;
+      line-height: 2.8rem;
+      margin-bottom: 1.6rem;
+      @include m.desktop {
+         line-height: 6.4rem;
+         font-size: v.$Heading3;
+      }
+   }
+   > p {
+      line-height: 2.5rem;
+      font-size: v.$regularText1;
+      color: v.$very_light_blue;
+      font-family: v.$barlow;
+      @include m.desktop {
+         max-width: 70%;
+         font-size: v.$regularText;
+         line-height: 3.2rem;
+      }
+   }
+}
+
+.crew__buttons {
+   @include m.flex_row;
+   justify-content: space-between;
+   align-items: center;
+   width: 8.8rem;
+   margin-bottom: 3.2rem;
+   > span {
+      cursor: pointer;
+      @include m.flex_row;
+      @include m.flex_center;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
+      background-color: v.$dark-gray;
+      
+   }
+   @include m.desktop {
+      position: absolute;
+      width: 13.2rem;
+      left: 16.7rem;
+      top: 79.1rem;
+      > span {
+         width: 1.5rem;
+         height: 1.5rem;
+      }
+   }
+}

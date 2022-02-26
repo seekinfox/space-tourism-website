@@ -93,8 +93,9 @@
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
    .nav__desktop_inner_container, .nav__mobile_inner_container {
-     -webkit-backdrop-filter: blur(85.5px);
-     backdrop-filter: blur(85.5px);
+      background-color: rgba(255, 255, 255, .03);
+     -webkit-backdrop-filter: blur(81.5px);
+     backdrop-filter: blur(81.5px);
    }
  }
  

@@ -13,6 +13,21 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  user-select: none;
+  scrollbar-color: #191f2f #232B38;
+  scrollbar-width: thin;
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 0px;
+    border: none;
+  }
 }
 
 html {
@@ -33,6 +48,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Bellefair', serif;
+  font-weight: 400;
 }
 
 /**

@@ -7,13 +7,13 @@
    background-size: cover;
 }
 .home__container {
-   height: 100vh;
    background: url(../../../assets/home/background-home-mobile.jpg);
    @include background;
    @include m.flex_column;
    @include m.flex_center;
    padding: 0 3rem;
-
+   padding-bottom: 13.1rem;
+   min-height: 100vh;
    @include m.tablet {
       background: url(../../../assets/home/background-home-tablet.jpg);
       @include background;
@@ -22,7 +22,7 @@
       @include m.flex_row;
       justify-content: space-around;
       align-items: center;
-      padding-top: 30rem;
+      padding-top: 25rem;
       background: url(../../../assets/home/background-home-desktop.jpg);
       @include background;
    }
@@ -40,6 +40,7 @@
       font-family: v.$Bl-con;
       font-size: v.$subheading3;
       color: v.$very_light_blue;
+      letter-spacing: v.$space;
    }
    > h1 {
       line-height: 10rem;
@@ -47,7 +48,6 @@
       margin: 1.6rem 0;
    }
    > p {
-      font-family: v.$Bl-con;
       font-style: normal;
       font-size: v.$regularText1;
       color: v.$very_light_blue;
@@ -70,7 +70,6 @@
    }
 }
 
-
 .home__explore_button {
    cursor: pointer;
    width: 15rem;
@@ -81,12 +80,12 @@
    border-radius: 50%;
    background-color: v.$white;
    text-transform: uppercase;
+   letter-spacing: v.$space;
    > span {
       font-size: 2rem;
    }
    @include m.desktop {
       width: 27.4rem;
       height: 27.4rem;
-
    }
 }
