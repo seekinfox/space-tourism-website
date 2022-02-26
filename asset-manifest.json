@@ -1,13 +1,19 @@
 {
   "files": {
-    "main.css": "/space-tourism-website/static/css/main.1941bc6d.css",
-    "main.js": "/space-tourism-website/static/js/main.86da800b.js",
+    "main.css": "/space-tourism-website/static/css/main.ec619870.css",
+    "main.js": "/space-tourism-website/static/js/main.d1da3238.js",
+    "static/media/image-anousheh-ansari.png": "/space-tourism-website/static/media/image-anousheh-ansari.2d647128496ddc638acd.png",
     "static/media/background-home-desktop.jpg": "/space-tourism-website/static/media/background-home-desktop.cdf3864ecbfdf20e8c3b.jpg",
     "static/media/background-destination-desktop.jpg": "/space-tourism-website/static/media/background-destination-desktop.468b922c69bf5499b4bc.jpg",
     "static/media/background-home-tablet.jpg": "/space-tourism-website/static/media/background-home-tablet.bc9efcc3281fa6801077.jpg",
+    "static/media/image-victor-glover.webp": "/space-tourism-website/static/media/image-victor-glover.1c271f99bab8b06d7ab5.webp",
+    "static/media/image-douglas-hurley.webp": "/space-tourism-website/static/media/image-douglas-hurley.e4c7def427824ef543c0.webp",
+    "static/media/background-crew-desktop.jpg": "/space-tourism-website/static/media/background-crew-desktop.88a3c692fd34eb311e04.jpg",
+    "static/media/image-mark-shuttleworth.webp": "/space-tourism-website/static/media/image-mark-shuttleworth.665e198adc22fcdf7810.webp",
     "static/media/background-destination-tablet.jpg": "/space-tourism-website/static/media/background-destination-tablet.8f55d346d8b6cfd95ab7.jpg",
     "static/media/image-europa.webp": "/space-tourism-website/static/media/image-europa.c3be32383f31d0f76d96.webp",
     "static/media/image-moon.webp": "/space-tourism-website/static/media/image-moon.b5a3c90e9c8eeb2cb68d.webp",
+    "static/media/background-crew-tablet.jpg": "/space-tourism-website/static/media/background-crew-tablet.16d51cf61e98ce45eb61.jpg",
     "static/media/background-home-mobile.jpg": "/space-tourism-website/static/media/background-home-mobile.13f7adecbcb3c3f170d8.jpg",
     "static/media/image-mars.webp": "/space-tourism-website/static/media/image-mars.7f55f721b4a64b7a56a8.webp",
     "static/media/background-destination-mobile.jpg": "/space-tourism-website/static/media/background-destination-mobile.e0131e27e751ead1a922.jpg",
@@ -16,11 +22,11 @@
     "static/media/logo.svg": "/space-tourism-website/static/media/logo.565f7f2c0534403f11b71994f4311210.svg",
     "static/media/icon-close.svg": "/space-tourism-website/static/media/icon-close.d47fda63cbd8b3fedbbc1b2a53f64470.svg",
     "static/media/icon-hamburger.svg": "/space-tourism-website/static/media/icon-hamburger.5273efa7c50e96ef3e51e7a2b54048ce.svg",
-    "main.1941bc6d.css.map": "/space-tourism-website/static/css/main.1941bc6d.css.map",
-    "main.86da800b.js.map": "/space-tourism-website/static/js/main.86da800b.js.map"
+    "main.ec619870.css.map": "/space-tourism-website/static/css/main.ec619870.css.map",
+    "main.d1da3238.js.map": "/space-tourism-website/static/js/main.d1da3238.js.map"
   },
   "entrypoints": [
-    "static/css/main.1941bc6d.css",
-    "static/js/main.86da800b.js"
+    "static/css/main.ec619870.css",
+    "static/js/main.d1da3238.js"
   ]
 }
