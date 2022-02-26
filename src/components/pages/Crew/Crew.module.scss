@@ -78,8 +78,9 @@
       border: none;
       > img {
          width: 100%;
+         
          min-width: 56rem;
-         min-height: 68.1rem
+         min-height: 68.1rem;
       }
    }
 }
@@ -138,7 +139,12 @@
       width: 1rem;
       height: 1rem;
       background-color: v.$dark-gray;
-      
+      &:hover {
+         background-color: v.$gray;
+      }
+   }
+   .crew__active {
+      background-color: v.$white;
    }
    @include m.desktop {
       position: absolute;

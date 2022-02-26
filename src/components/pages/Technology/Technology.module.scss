@@ -1,0 +1,169 @@
+@use "../../../stylesheets/abstracts/mixins" as m;
+@use "../../../stylesheets/abstracts/variables" as v;
+
+@mixin background {
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+.tech__container {
+   background: url(../../../assets/technology/background-technology-mobile.jpg);
+   @include background;
+   color: v.$white;
+   text-align: center;
+   @include m.flex_column;
+   @include m.flex_center;
+   padding-top: 8.8rem;
+   min-height: 100vh;
+   * {
+      font-weight: 400;
+   }
+
+   h2 {
+      font-family: v.$Bl-con;
+      font-size: v.$subheading3;
+      text-transform: uppercase;
+      letter-spacing: v.$space;
+      margin-bottom: 3.2rem;
+      > span {
+         margin-right: 1.8rem;
+         opacity: .6;
+      }
+      @include m.desktop {
+         align-self: flex-start;
+         margin-left: 16.5rem;
+         font-size: v.$Heading5;
+         line-height: 3.4rem;
+         letter-spacing: v.$big_space; 
+      }
+   }  
+
+
+   @include m.tablet {
+      background: url(../../../assets/technology/background-technology-tablet.jpg);
+      @include background();
+      
+   }
+   @include m.desktop {
+      text-align: left;
+      padding: 10% 0;
+      background: url(../../../assets/technology/background-technology-desktop.jpg);
+      @include background;
+      
+   }
+}
+.tech__inner_container {
+   width: 100%;
+   @include m.desktop {
+      display: flex;
+      flex-direction:row-reverse;
+      justify-content: space-between;
+      padding-left:16.5rem;
+      flex-grow: 1;
+   }
+}
+
+.tech__image {
+   margin-bottom: 3.4rem;
+   > img {
+      width: 100%;
+      min-height: 17rem;
+      max-height: 31rem;
+   }
+   @include m.desktop {
+      margin: 0;
+      align-self: center;
+      > img {
+         min-width: 51.5rem;
+         width: 100%;
+         min-height: 52.7rem;
+      }
+   }
+}
+
+.tech__content {
+   @include m.flex_column;
+   @include m.flex_center;
+   @include m.desktop {
+      @include m.flex_row; 
+   }
+}
+.texh__buttons {
+   width: 100%;
+   max-width: 15.2rem;
+   @include m.flex_row;
+   justify-content: space-between;
+   margin-bottom: 2.6rem;
+   > span {
+      cursor: pointer;
+      border: 1px solid v.$dark-gray;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      font-size: v.$subheading3;
+      @include m.flex_row;
+      @include m.flex_center;
+      @include m.desktop {
+         width: 8rem;
+         height: 8rem;
+         font-size: v.$Heading4;
+         &:nth-of-type(2) {
+            margin: 3.2rem 0;
+         }
+      }
+      &:hover {
+         border-color: v.$white;
+      }
+   }
+   .tech__active {
+      background-color: v.$white;
+      color: v.$main_black;
+   }
+
+   @include m.desktop {
+      width: auto;
+      margin: 0 8rem 0 0;
+      @include m.flex_column;
+   }
+}
+.tech__typos {
+   padding: 0 2.4rem;
+   @include m.desktop {
+      padding: 0;
+   }
+   >span {
+      margin-bottom: 1rem;
+      font-size: v.$subheading2;
+      letter-spacing: v.$space;
+      font-family: v.$Bl-con;
+      line-height: 1.7rem;
+      color: v.$very_light_blue;
+      @include m.desktop {
+         font-size: v.$subheading3;
+         line-height: 1.9rem;
+      }
+   }
+
+   > h3 {
+      font-size: 2.4rem;
+      line-height: 2.8rem;
+      text-transform: uppercase;
+      margin-bottom: 1.6rem;
+      margin-top: .9rem;
+      @include m.desktop {
+         font-size: v.$Heading3;
+         line-height: 6.4rem;
+      }
+   }
+   > p {
+      font-size: v.$regularText1;
+      line-height: 2.5rem;
+      font-family: v.$barlow;
+      color: v.$very_light_blue;
+      @include m.desktop {
+         font-size: v.$regularText;
+         line-height: 3.2rem;
+         padding-right: 35%;
+      }
+   }
+}

@@ -69,11 +69,11 @@
 
    .nav__link {
       margin-bottom: 4rem;
-       > p {
+      > p {
           > span {
              font-weight:bold;
           }
-       }
+      }
    }
 }
 
@@ -85,9 +85,27 @@
    @include m.flex_row;
    justify-content: space-evenly;
    align-items: center;
-
    .nav__link {
       margin: 0;
+      &:hover {
+         border-bottom: 3px solid v.$gray;
+      }
+      @include m.desktop {
+         height: 100%;
+         @include m.flex_row;
+         @include m.flex_center;
+         &:hover {
+            border-bottom: 3px solid v.$gray;
+         }
+      }
+   }
+   .nav__active {
+      text-shadow: 0px 0px 5px v.$white;
+   }
+   @include m.desktop {
+      .nav__active {
+         border-bottom: 3px solid v.$white;
+      }
    }
 }
 
