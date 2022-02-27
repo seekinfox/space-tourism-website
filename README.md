@@ -72,6 +72,28 @@ backdrop_filter is not supported by Firefox so I had to find how to use fallback
 }
 
 ```
+- 2: animation 
+I am animating a slider in destination page.
+The slider is rendering the content using array.map() method. i used the useEffect hook and useState hook to set the animation whenever i click the button.
+process was 
+- set the default state to false
+- onclick set the state to true
+- use state to add animation classname to the element i want to animate onclick. add css to that class in scss.
+- in useEffect set time out to remove the animation class.
+-  clear the settimeout.
+
+```js
+ const [animate, setAnimate] = useState(false)
+
+ useEffect(() => {
+    const removeAnimate = setTimeout(() => setAnimate(false), 500)
+    return () => {
+      clearTimeout(removeAnimate)
+    }
+  }, [destination])
+  
+  <div classname={animate ? style.dsn__animate : ""}><div>
+ ```
 
 ### Continued development
 
@@ -80,7 +102,7 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
+- [useEffect](https://medium.com/@dev_abhi/useeffect-what-when-and-how-95045bcf0f32) - i was confused about useEffect hook and did know why and when to use it. this website helped a bit to get the general idea.
 - [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
 
 
