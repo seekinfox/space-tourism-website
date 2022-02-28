@@ -65,12 +65,14 @@
             margin: 2.4rem 0;
       }
       p {
+         font-family: v.$barlow;
          font-size: v.$regularText;
       }
    }
 }
 
 .home__explore_button {
+   box-shadow: 0 0 0 8rem v.$dark-gray;
    cursor: pointer;
    width: 15rem;
    height: 15rem;
@@ -88,4 +90,9 @@
       width: 27.4rem;
       height: 27.4rem;
    }
+   animation: exploreAnimate 1s ease-out infinite;
+}
+@keyframes exploreAnimate {
+   0% {box-shadow: 0 0 0 0rem v.$dark-gray;}
+   100% {box-shadow: 0 0 0 8rem rgba(255,255,255, 0);}
 }

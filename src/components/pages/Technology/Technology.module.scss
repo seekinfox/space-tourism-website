@@ -15,6 +15,7 @@
    @include m.flex_center;
    padding-top: 8.8rem;
    min-height: 100vh;
+   overflow: hidden;
    * {
       font-weight: 400;
    }
@@ -31,7 +32,7 @@
       }
       @include m.desktop {
          align-self: flex-start;
-         margin-left: 16.5rem;
+         margin-left: 18.9rem;
          font-size: v.$Heading5;
          line-height: 3.4rem;
          letter-spacing: v.$big_space; 
@@ -79,6 +80,13 @@
          min-height: 52.7rem;
       }
    }
+}
+.tech__image_animate {
+   animation: imageAnimate .5s linear forwards;
+}
+@keyframes imageAnimate {
+   from { transform: translateX(15vw)}
+   to { transform: translateX(0)}
 }
 
 .tech__content {
@@ -166,4 +174,12 @@
          padding-right: 35%;
       }
    }
+}
+.tech__typo_animate {
+   animation: typoAnimate .5s linear forwards;
+}
+
+@keyframes typoAnimate {
+   from {transform: translateY(20vh);}
+   to {transform: translateY(0);}
 }

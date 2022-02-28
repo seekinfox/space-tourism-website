@@ -16,7 +16,7 @@
    @include m.flex_column;
    @include m.flex_center;
    padding: 0 2.4rem;
-
+   overflow: hidden;
    @include m.desktop {
       text-align: left;
       padding: 0 16rem;
@@ -45,7 +45,7 @@
       @include m.desktop {
          margin: 0;
          align-self: flex-start;
-         margin-left: 0;
+         margin-left: 2.9rem;
          font-size: v.$Heading5;
          line-height: 3.4rem;
          letter-spacing: v.$big_space;
@@ -84,7 +84,19 @@
       }
    }
 }
-
+.crew__image_animate {
+   animation: imageanimate .3s linear forwards;
+}
+@keyframes imageanimate {
+   from {
+      opacity: 0;
+      transform: translateX(10vw);
+   }
+   to {
+      opacity: 1;
+      transform: translateX(0);
+   }
+}
 .crew__content{
    @include m.flex_column;
    @include m.flex_center;
@@ -111,6 +123,13 @@
          line-height: 6.4rem;
          font-size: v.$Heading3;
       }
+   }
+   .crew__text_animate {
+      animation: textAnimate .5s linear forwards;
+   }
+   @keyframes textAnimate {
+      from {transform: translateX(-10vw);}
+      to {transform: translateX(0);}
    }
    > p {
       line-height: 2.5rem;
