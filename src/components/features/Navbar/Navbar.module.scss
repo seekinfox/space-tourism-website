@@ -87,9 +87,6 @@
    align-items: center;
    .nav__link {
       margin: 0;
-      &:hover {
-         border-bottom: 3px solid v.$gray;
-      }
       @include m.desktop {
          height: 100%;
          @include m.flex_row;

@@ -4,6 +4,12 @@ import OIcon from "../../../assets/shared/icon-hamburger.svg";
 import Links from './Links';
 import logo from "../../../assets/shared/logo.svg"
 import close from "../../../assets/shared/icon-close.svg"
+import { motion } from 'framer-motion';
+
+const variants = {
+   open: { opacity: 1, x: "0%" },
+   closed: { opacity: 0, x: "60vw" },
+ }
 
 export default function Navbar({desktop}) {
    const [menu, setMenu] = useState(false)
@@ -22,11 +28,12 @@ export default function Navbar({desktop}) {
                   <div className={style.nav__open_icon} onClick={() => setMenu(prev => !prev)}>
                      <img src={navIcon} alt="" />
                   </div>
-                  {menu ?
-                     <div className={style.nav__mobile_inner_container}>
+                  <motion.div 
+                     className={style.nav__mobile_inner_container}
+                     animate={menu ? "open" : "closed"}
+                     variants={variants}>
                      <Links />
-                     </div> : ""
-                  }
+                  </motion.div>
                </>
             }
          </nav>   

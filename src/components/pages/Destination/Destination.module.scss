@@ -76,6 +76,20 @@
       margin-right: 15.7rem;
    }
 }
+.dsn__animate {
+   animation: animate .5s linear forwards;
+}
+@keyframes animate {
+   from {
+      filter: brightness(0%);   
+      transform: scale(0.3) translateX(-50rem);
+   }
+   to {
+      filter: brightness(100%);
+      transform: scale(1) translateX(0);
+   }
+}
+
 .dsn__information {
    @include m.flex_column;
    @include m.flex_center;
@@ -177,5 +191,16 @@
       width: 100%;
       @include m.flex_row;
       align-items: flex-start;
+   }
+}
+.dsn__info_animate {
+   animation: animateinfo .5s linear forwards;
+}
+@keyframes animateinfo {
+   from {
+      filter: blur(2rem);
+   }
+   to {
+      filter: blur(0px);
    }
 }
