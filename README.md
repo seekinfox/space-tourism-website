@@ -2,23 +2,18 @@
 
 This is a solution to the [Space tourism website challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Table of contents
-
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-  - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-
-
-
-
 ### Links
 
 - Solution URL: [https://github.com/seekinfox/space-tourism-website](https://github.com/seekinfox/space-tourism-website)
 - Live Site URL: [https://seekinfox.github.io/space-tourism-website/](https://seekinfox.github.io/space-tourism-website/)
 
+## Table of contents
+
+  - [The challenge](#the-challenge)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
 ### The challenge
 
