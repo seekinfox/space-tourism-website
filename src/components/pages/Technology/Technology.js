@@ -2,14 +2,30 @@ import React, { useEffect, useState } from 'react'
 import style from "./Technology.module.scss"
 import { TechData } from './Data'
 import { useMediaQuery } from 'react-responsive'
+import { motion } from "framer-motion";
 
+const varient = {
+  active: { y: "-5vh"},
+  unloaded: { y: 0 },
+}
 export default function Technology() {
+  const [load, setLoad] = useState(true)
   const [animate, setAnimate] = useState(false)
   const [tech, setTech] = useState(TechData[0])
   const [techActive, setTechActive] = useState(tech.name)
   const isDesktopOrLaptop = useMediaQuery({
     query: '(min-width: 1224px)'
   })
+  useEffect(() => {
+    const laodPageAnimate = setTimeout(() => {
+      setLoad(false)
+    }, 500);
+  
+    return () => {
+      clearTimeout(laodPageAnimate)
+    }
+  }, [])
+
   useEffect(() => {
     const animateTimeout = setTimeout(()=> {
       setAnimate(false)
@@ -27,7 +43,11 @@ export default function Technology() {
 
   let img = isDesktopOrLaptop ? tech.pimg : tech.img;
   return (
-    <section className={style.tech__container}>
+    <motion.section 
+    className={style.tech__container}
+    animate={load ? "active" : "unloaded"}
+    variants={varient}
+    >
       <h2><span>03</span>SPACE LAUNCH 101</h2>
       <div className={style.tech__inner_container}>
         <div className={`${style.tech__image} ${animate ? style.tech__image_animate:""}`}>
@@ -51,6 +71,6 @@ export default function Technology() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }

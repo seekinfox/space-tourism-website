@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import style from "./Crew.module.scss"
 import { CrewData } from './Data'
-
+import { motion } from "framer-motion"
+const varient = {
+  active: { y: "-5vh"},
+  unloaded: { y: 0 },
+}
 
 export default function Crew() {
+  const [load, setLoad] = useState(true)
   const [animate, setAnimate] = useState(false)
   const [crew, setCrew] = useState(CrewData[0])
   const [button, setButton] = useState("Commander");
@@ -15,9 +20,22 @@ export default function Crew() {
       clearTimeout(animateTimeout)
     }
   }, [crew])
+  useEffect(() => {
+    const laodPageAnimate = setTimeout(() => {
+      setLoad(false)
+    }, 500);
+  
+    return () => {
+      clearTimeout(laodPageAnimate)
+    }
+  }, [])
+  
   
   return (
-    <section className={style.crew__container}>
+    <motion.section 
+    className={style.crew__container}
+    animate={load ? "active" : "unloaded"}
+    variants={varient}>
       <h2><span>02</span>Meet your crew</h2>
       <div className={style.crew__inner_container}>
         <div className={style.crew__image}>
@@ -41,6 +59,6 @@ export default function Crew() {
         </div>
       </div>
 
-    </section>
+    </motion.section>
   )
 }

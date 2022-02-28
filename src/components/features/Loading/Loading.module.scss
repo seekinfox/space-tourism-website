@@ -1,0 +1,48 @@
+@use "../../../stylesheets/abstracts/mixins" as m;
+@use "../../../stylesheets/abstracts/variables" as v;
+
+.load__container {
+   background-color: #120B1B;
+   background-size: 130%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+   z-index: 2;
+   @include m.flex_column;
+   @include m.flex_center;
+   > div {
+      animation: ship 4s linear infinite forwards;
+      opacity: 1;
+      overflow: hidden;
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      @include m.flex_column;
+      @include m.flex_center;
+      > img {
+         width: 170%;
+      }
+   }
+}
+
+@keyframes ship {
+   0% {
+      transform: translateY(50vh);
+   }
+   30% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(0);
+   }
+   60% {
+      transform: translateY(0);
+   }
+   100% {
+      transform: translateY(-50vh);
+   }
+   
+}

@@ -1,17 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import style from "./Destination.module.scss";
 import { DestinationData  } from './Data';
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
+const varient = {
+  active: { y: "-5vh"},
+  unloaded: { y: 0 },
+}
 let planet = DestinationData[0];
 
 export default function Destination() {
+  const [load, setLoad] = useState(true)
   const [animate, setAnimate] = useState(false)
   const [active, setAvtive] = useState("moon");
   const [destination, setDestination] =  useState(planet)
 
   useEffect(() => {
+    const laodPageAnimate = setTimeout(() => {
+      setLoad(false)
+    }, 500);
+  
+    return () => {
+      clearTimeout(laodPageAnimate)
+    }
+  }, [])
+  
+  useEffect(() => {
     const removeAnimate = setTimeout(() => setAnimate(false), 500)
+
     return () => {
       clearTimeout(removeAnimate)
     }
@@ -23,7 +39,10 @@ export default function Destination() {
   }
 
   return (
-    <section className={style.dsn__container}>
+    <motion.section 
+    className={style.dsn__container}
+    animate={load ? "active" : "unloaded"}
+    variants={varient}>
       <h2><span>01</span>Pick your destination</h2>
       <div className={style.dsn__inner_container}>
         <div
@@ -54,6 +73,6 @@ export default function Destination() {
         </div>
       </div>
 
-    </section>
+    </motion.section>
   )
 }
