@@ -1,11 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import style from "./Home.module.scss"
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
-export default function Home({desktop}) {
 
+const varient = {
+  active: { y: "-5vh"},
+  unloaded: { y: "0vw" },
+}
+
+export default function Home({desktop}) {
+  const [load, setLoad] = useState(true)
+
+  useEffect(() => {
+    const laodPageAnimate = setTimeout(() => {
+        setLoad(false)
+    }, 500);
+  
+    return () => {
+      clearTimeout(laodPageAnimate)
+    }
+  }, [])
+  
   return (
-    <section className={style.home__container}>
+    <motion.section 
+    className={style.home__container}
+    animate={load ? "active" : "unloaded"}
+    variants={varient}
+    >
       <div className={style.home__text_content}>
           <span>SO, YOU WANT TO TRAVEL TO</span>
           <h1>SPACE</h1>
@@ -18,7 +39,7 @@ export default function Home({desktop}) {
         <span>explore</span>
       </motion.div>
       </Link>
-    </section>
+    </motion.section>
     
   )
 }
