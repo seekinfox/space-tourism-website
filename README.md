@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://github.com/seekinfox/space-tourism-website](https://github.com/seekinfox/space-tourism-website)
 - Live Site URL: [https://seekinfox.github.io/space-tourism-website/](https://seekinfox.github.io/space-tourism-website/)
 
 ## My process
@@ -94,20 +94,32 @@ process was
   
   <div classname={animate ? style.dsn__animate : ""}><div>
  ```
+ 3 . used framer motion for page loading animation and navbar. it was much easier to use.
+used varients with combination of useEffect to load animation onrender.
+```js
+const varient = {
+  active: { y: "-5vh"},
+  unloaded: { y: "0vw" },
+}
 
-### Continued development
-
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
+useEffect(() => {
+    const laodPageAnimate = setTimeout(() => {
+        setLoad(false)
+    }, 500);
+  
+    return () => {
+      clearTimeout(laodPageAnimate)
+    }
+  }, [])
+```
 
 ### Useful resources
 
 - [useEffect](https://medium.com/@dev_abhi/useeffect-what-when-and-how-95045bcf0f32) - i was confused about useEffect hook and did know why and when to use it. this website helped a bit to get the general idea.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Framer motion](https://www.framer.com/docs/examples/) - Motion is a production-ready motion library for React from Framer. It brings declarative animations, effortless layout transitions and gestures while maintaining HTML and SVG semantics.
 
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
 - Frontend Mentor - [@seekinfox](https://www.frontendmentor.io/profile/seekinfox)
 - Twitter - [@seekinfox](https://www.twitter.com/seekinfox)
