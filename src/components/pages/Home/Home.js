@@ -3,10 +3,6 @@ import style from "./Home.module.scss"
 import { motion } from "framer-motion"
 import { Link } from 'react-router-dom'
 
-const varient = {
-  active: { y: "-5vh"},
-  unloaded: { y: "0vw" },
-}
 
 export default function Home({desktop}) {
   const [load, setLoad] = useState(true)
@@ -24,8 +20,8 @@ export default function Home({desktop}) {
   return (
     <motion.section 
     className={style.home__container}
-    animate={load ? "active" : "unloaded"}
-    variants={varient}
+    initial={{y:"40vh"}}
+    animate={load?{y:0}:{y:0}}
     >
       <div className={style.home__text_content}>
           <span>SO, YOU WANT TO TRAVEL TO</span>

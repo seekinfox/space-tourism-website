@@ -7,8 +7,8 @@ import close from "../../../assets/shared/icon-close.svg"
 import { motion } from 'framer-motion';
 
 const variants = {
-   open: { opacity: 1, x: "0%" },
-   closed: { opacity: 0, x: "60vw" },
+   open: { x: "0%" },
+   closed: { display:"none", x: "60vw" },
  }
 
 export default function Navbar({desktop}) {

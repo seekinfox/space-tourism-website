@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 import style from "./Crew.module.scss"
 import { CrewData } from './Data'
 import { motion } from "framer-motion"
-const varient = {
-  active: { y: "-5vh"},
-  unloaded: { y: 0 },
-}
 
 export default function Crew() {
   const [load, setLoad] = useState(true)
@@ -34,8 +30,8 @@ export default function Crew() {
   return (
     <motion.section 
     className={style.crew__container}
-    animate={load ? "active" : "unloaded"}
-    variants={varient}>
+    initial={{y:"40vh"}}
+    animate={load ?{y:0}:{y:0}}>
       <h2><span>02</span>Meet your crew</h2>
       <div className={style.crew__inner_container}>
         <div className={style.crew__image}>

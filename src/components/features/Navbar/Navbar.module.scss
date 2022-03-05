@@ -8,7 +8,7 @@
    top: 0;
    left: 0;
    width: 100%;
-   z-index: 2;
+   z-index: 3;
    .h__mainLogo {
       padding: 2.4rem;
       cursor: pointer;
@@ -34,7 +34,7 @@
       cursor: pointer;
       position: absolute;
       top: 3.4rem;
-      z-index: 2;
+      z-index: 3;
       right:2.6rem;
       > img {
          width: 1.9rem;
@@ -63,10 +63,9 @@
    right: 0;
    width: 67vw;
    height: 100vh;
-   z-index:0;
+   z-index:2;
    padding: 11.8rem 3.2rem;
    @include m.flex_column;
-
    .nav__link {
       margin-bottom: 4rem;
       > p {
@@ -96,19 +95,25 @@
          }
       }
    }
-   .nav__active {
-      text-shadow: 0px 0px 5px v.$white;
-   }
+  
    @include m.desktop {
       .nav__active {
          border-bottom: 3px solid v.$white;
       }
    }
+
+   &::before {
+      content: "";
+      width: 65%;
+      border: 1px solid v.$dark-gray;
+      position: absolute;
+      right:   80rem;
+   }
 }
 
 @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
    .nav__desktop_inner_container, .nav__mobile_inner_container {
-      background-color: rgba(255, 255, 255, .03);
+      background-color: v.$dark-gray;
      -webkit-backdrop-filter: blur(81.5px);
      backdrop-filter: blur(81.5px);
    }
@@ -117,6 +122,6 @@
  /* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
  @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
    .nav__desktop_inner_container, .nav__mobile_inner_container {
-     background-color: rgba(0, 0, 0, .9);
+     background-color: v.$dark-gray;
    }
  }

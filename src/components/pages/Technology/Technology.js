@@ -4,10 +4,6 @@ import { TechData } from './Data'
 import { useMediaQuery } from 'react-responsive'
 import { motion } from "framer-motion";
 
-const varient = {
-  active: { y: "-5vh"},
-  unloaded: { y: 0 },
-}
 export default function Technology() {
   const [load, setLoad] = useState(true)
   const [animate, setAnimate] = useState(false)
@@ -45,8 +41,8 @@ export default function Technology() {
   return (
     <motion.section 
     className={style.tech__container}
-    animate={load ? "active" : "unloaded"}
-    variants={varient}
+    initial={{y:"40vh"}}
+    animate={load ?{y:0}:{y:0}}
     >
       <h2><span>03</span>SPACE LAUNCH 101</h2>
       <div className={style.tech__inner_container}>
