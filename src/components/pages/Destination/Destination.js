@@ -3,10 +3,6 @@ import style from "./Destination.module.scss";
 import { DestinationData  } from './Data';
 import { motion } from "framer-motion";
 
-const varient = {
-  active: { y: "-5vh"},
-  unloaded: { y: 0 },
-}
 let planet = DestinationData[0];
 
 export default function Destination() {
@@ -41,8 +37,8 @@ export default function Destination() {
   return (
     <motion.section 
     className={style.dsn__container}
-    animate={load ? "active" : "unloaded"}
-    variants={varient}>
+    initial={{y:"40vh"}}
+    animate={load ? {y:0}:{y:0}}>
       <h2><span>01</span>Pick your destination</h2>
       <div className={style.dsn__inner_container}>
         <div

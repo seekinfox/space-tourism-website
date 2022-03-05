@@ -21,8 +21,8 @@
    @include m.desktop {
       @include m.flex_row;
       justify-content: space-around;
-      align-items: center;
-      padding-top: 25rem;
+      align-items: flex-end;
+      padding-top: 20%;
       background: url(../../../assets/home/background-home-desktop.jpg);
       @include background;
    }
